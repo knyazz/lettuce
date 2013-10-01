@@ -215,7 +215,7 @@ Example:
     python manage.py harvest --no-server
     python manage.py harvest -S
 
-### Running without HTTP server and with implementation of smtp mail server
+### Running without HTTP server and with implementation of smtp mail server queue
 
 If you face the problem of sending email, you may use this to parse incoming smtp emails to django EmailMessage
 
