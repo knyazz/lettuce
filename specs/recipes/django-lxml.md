@@ -215,6 +215,30 @@ Example:
     python manage.py harvest --no-server
     python manage.py harvest -S
 
+### Running without HTTP server and with implementation of smtp mail server
+
+If you face the problem of sending email, you may use this to parse incoming smtp emails to django EmailMessage
+
+Configure following options in settings.py
+
+    LETTUCE_SMTP_QUEUE_HOST
+    LETTUCE_SMTP_QUEUE_PORT
+
+this is where lettuce smtp server will be listen to for incoming email messages.
+
+django application smtp settings should be configured accordingly for sending emails to lettuce smtp
+
+    EMAIL_HOST
+    EMAIL_PORT
+    EMAIL_HOST_USER = None
+    EMAIL_HOST_PASSWORD = None
+
+Run django app
+
+Run lettuce
+
+    ./manage.py harvest --no-server --smtp-queue
+
 ### running the HTTP server in other port than 8000
 
 If you face the problem of having lettuce running on port 8000, you can
